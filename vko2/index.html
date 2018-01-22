@@ -6,7 +6,6 @@
 <body>
 
 <script>
-
 	var game = new Phaser.Game(800, 600, Phaser.AUTO, '', {preload: preload, create: create, update: update});
 
 	function preload() {
@@ -78,11 +77,9 @@
 			//give star a randomized bounce value
 			star.body.bounce.y = 0.7 + Math.random() * 0.2;
 		}
-
 	}
 
 	function update() {
-
 		//collide the player and the stars with platforms
 		var hitPlatform = game.physics.arcade.collide(player, platforms);
 
@@ -107,16 +104,11 @@
 		game.physics.arcade.overlap(player, stars, collectStar, null, this);
 
 		function collectStar(player, star) {
-
 			// Removes the star from the screen
 			star.kill();
-
 		}
-
-
 	}
 
 </script>
-
 </body>
 </html>
